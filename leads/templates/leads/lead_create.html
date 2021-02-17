@@ -20,7 +20,7 @@
 </head>
 
 <body>
-  <a href="/leads">Go Back To Leads</a>
+  <a href="{% url 'leads:lead-list' %}">Go Back To Leads</a>
   <title>Lead - {{ lead.first_name }} {{ lead.last_name }}</title>
   <h1>Create A New Lead</h1>
   <form method="POST">

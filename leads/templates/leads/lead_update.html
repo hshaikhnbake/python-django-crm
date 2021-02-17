@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .lead {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 6px;
+        padding-right: 6px;
+        margin-top: 10px;
+        background: #f6f6f6;
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <a href="{% url 'leads:lead-detail' lead.pk %}">Go Back To {{ lead.first_name }} {{ lead.last_name }}'s profile</a>
+    <title>Lead - {{ lead.first_name }} {{ lead.last_name }}</title>
+    <h1>Update lead: {{ lead.first_name }} {{lead.last_name}}</h1>
+    <form method="POST">
+      {% csrf_token %} 
+      {{ form.as_p }}
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
